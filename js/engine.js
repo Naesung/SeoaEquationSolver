@@ -9,7 +9,7 @@ function main(input) {
         return invalid(input)
     }
     //식에 사용가능한 문자 판별
-    if(input.match(/[a-z|A-Z|0-9|' '|'+'|'-'|'*'|'\/'|'='|'^'|','|'('|')'|'{'|'}'|'['|'\]']/g).length!==input.length){
+    if(input.match(/[a-z|A-Z|0-9|' '|'+'|'-'|'*'|'\/'|'='|'^'|','|'('|')'|'{'|'}'|'['|'\]'|'√']/g).length!==input.length){
         return invalid(input)
     }
     const equation = input.split(',')
@@ -54,7 +54,19 @@ function main(input) {
 }
 
 function equa(input){
-    
+    let stack = []
+    for (let i = 0; i < input.length; i++) {
+        const elem = input.charAt(i)
+        if(elem==='('){
+            stack.push(i)
+        }else if(elem===')'){
+            stack.pop()
+            //1) 괄호 안의 부분을 계산하는 함수를 제작
+            //2) 그 함수값으로 괄호 내부를 replace한다
+            //3)캬ㅏㅏㅏ 빛이나는 알고리즘
+        }
+    }
+    return input
 }
 function invalid(input) {
     return '식 ' + input + '는 잘못된 식입니다'

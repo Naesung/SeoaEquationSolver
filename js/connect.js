@@ -3,3 +3,6 @@ document.getElementById('btn').addEventListener('click',()=>{
   const res = main(equation)
   document.getElementById('display').innerHTML = res
 })
+function insert(str){
+  document.getElementById('input').value+=str
+}
